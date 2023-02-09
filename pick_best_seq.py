@@ -39,6 +39,8 @@ with open(infilename) as infile:
                 qseq = new_line[0]
                 evalue = new_line[10]
                 taxid = new_line[12]
+                if ";" in taxid:
+                    taxid = taxid.split(";")[0] + "\n"
                 length = new_line[3]
         best_seqs[qseq] = taxid
 
